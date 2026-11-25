@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090909" />
+    <meta
+      name="description"
+      content="Invitación al cumpleaños de 16 de Benicio. Domingo 29 de noviembre, de 14:00 a 19:00, en Chivilcoy."
+    />
+    <title>Benicio · Mis 16</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #d7b56d;
+        --gold-light: #f2dfad;
+        --ink: #090909;
+        --muted: #b9b3a7;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: #f7f3e9;
+        background:
+          radial-gradient(
+            ellipse at 50% 8%,
+            rgba(190, 151, 75, 0.15),
+            transparent 42%
+          ),
+          radial-gradient(
+            ellipse at 10% 90%,
+            rgba(190, 151, 75, 0.07),
+            transparent 34%
+          ),
+          var(--ink);
+        font-family: "Montserrat", sans-serif;
+        display: grid;
+        place-items: center;
+        padding: 28px 16px;
+      }
+      .invitation {
+        width: min(100%, 620px);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(215, 181, 109, 0.55);
+        padding: clamp(30px, 7vw, 64px) clamp(22px, 7vw, 66px);
+        text-align: center;
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.035), transparent 38%),
+          #0d0d0d;
+        box-shadow:
+          0 24px 90px rgba(0, 0, 0, 0.55),
+          inset 0 0 0 7px rgba(215, 181, 109, 0.045);
+        animation: appear 900ms ease both;
+      }
+      .invitation::before,
+      .invitation::after {
+        content: "✦";
+        position: absolute;
+        color: var(--gold);
+        font-size: 17px;
+        opacity: 0.8;
+      }
+      .invitation::before {
+        top: 20px;
+        left: 22px;
+      }
+      .invitation::after {
+        bottom: 20px;
+        right: 22px;
+      }
+      .eyebrow {
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 0.32em;
+        font-size: 10px;
+        font-weight: 500;
+        margin: 0 0 22px;
+      }
+      h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        font-size: clamp(58px, 14vw, 104px);
+        line-height: 0.88;
+        letter-spacing: 0.045em;
+        color: var(--gold-light);
+        margin: 0;
+        text-transform: uppercase;
+      }
+      .age {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(27px, 7vw, 42px);
+        letter-spacing: 0.22em;
+        color: var(--gold);
+        margin: 17px 0 27px;
+      }
+      .rule {
+        width: 72px;
+        height: 1px;
+        margin: 0 auto 25px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+      }
+      .intro {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(22px, 5vw, 28px);
+        line-height: 1.35;
+        color: #f4eee1;
+        margin: 0 auto 27px;
+      }
+      .date {
+        color: var(--gold-light);
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 0 0 10px;
+      }
+      .time {
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        margin: 0 0 29px;
+      }
+      .pool {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        border: 1px solid rgba(215, 181, 109, 0.42);
+        padding: 11px 18px;
+        color: var(--gold-light);
+        font-size: 11px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        margin-bottom: 31px;
+      }
+      .pool span {
+        font-size: 17px;
+      }
+      .venue-label {
+        color: var(--gold);
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        margin: 0 0 9px;
+      }
+      .address {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 29px;
+        color: #fff;
+        margin: 0 0 5px;
+      }
+      .city {
+        color: var(--muted);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin: 0 0 25px;
+      }
+      .map-link {
+        display: inline-block;
+        color: #0b0b0b;
+        background: linear-gradient(110deg, #b8944d, #f0d99e, #b8944d);
+        text-decoration: none;
+        padding: 14px 24px;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        transition:
+          transform 0.2s ease,
+          filter 0.2s ease;
+      }
+      .map-link:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.08);
+      }
+      .confirm-text {
+        color: var(--gold-light);
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        margin: 28px 0 0;
+        text-transform: uppercase;
+      }
+      .footer {
+        color: #827b6d;
+        font-size: 9px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        margin: 34px 0 0;
+      }
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="invitation">
+      <h1>Beni</h1>
+      <p class="age">16</p>
+      <div class="rule"></div>
+      <p class="intro">
+        Quiero compartir este día con vos.<br />¡Te espero para festejar!
+      </p>
+      <p class="date">Domingo · 29 de noviembre de 2026</p>
+      <p class="time">DE 14:00 A 19:00 HS</p>
+      <div class="pool">
+        <span aria-hidden="true">✧</span> ¡Habrá pileta!
+        <span aria-hidden="true">✧</span>
+      </div>
+      <p class="venue-label">¿Dónde?</p>
+      <p class="address">Balcarce 970</p>
+      <p class="city">Chivilcoy · Buenos Aires</p>
+      <a
+        class="map-link"
+        href="https://www.google.com/maps/search/?api=1&amp;query=Balcarce+970%2C+Chivilcoy%2C+Buenos+Aires%2C+Argentina"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Ver ubicación en Google Maps ↗</a
+      >
+      <p class="confirm-text">CONFIRMAR ASISTENCIA</p>
+      <p class="footer">Te espero · Beni</p>
+    </main>
+  </body>
+</html>
